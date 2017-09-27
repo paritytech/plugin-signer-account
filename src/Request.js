@@ -14,15 +14,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import SignerLayout from '@parity/ui/Signer/Layout';
+import TransactionPending from '@parity/ui/Signer/TransactionPending';
 
 export default function Request ({ accounts, className, date, gasLimit, isFocussed, isSending, netVersion, onConfirm, onReject, payload, origin }) {
   const transaction = payload.sendTransaction || payload.signTransaction;
 
   return (
-    <SignerLayout className={ className }>
-      <TransactionMainDetails />
-    </SignerLayout>
+    <TransactionPending
+      accounts={ accounts }
+      className={ className }
+      date={ date }
+      isFocussed={ isFocussed }
+      gasLimit={ gasLimit }
+      isSending={ isSending }
+      netVersion={ netVersion }
+      onConfirm={ onConfirm }
+      onReject={ onReject }
+      origin={ origin }
+      transaction={ transaction }
+    />
   );
 }
 
