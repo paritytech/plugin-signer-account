@@ -1,3 +1,3 @@
-# plugin-sign-default
+# plugin-signer-account
 
-Default Signer plugin handler
+Signer plugin to send, sign and encrypt using Parity accounts
